@@ -9,6 +9,7 @@
     "material-ui": "^0.19.4",
     "meteor-node-stubs": "^0.3.2",
     "react": "^16.1.0",
+    "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^16.1.0",
     "react-router-dom": "^4.2.2",
     "simpl-schema": "^0.4.1"
