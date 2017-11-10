@@ -1,4 +1,15 @@
-// Server entry point, imports all server code
+import { Meteor } from 'meteor/meteor';
+import { Memos } from '../imports/api/memos/memos';
 
-import '/imports/startup/server';
-import '/imports/startup/both';
+Meteor.startup(() => {
+  if (Memos.find().count() === 0) {
+    const data = [
+      {content: 'Memo 1'},
+      {content: 'Memo 2'},
+      {content: 'Memo 3'},
+      {content: 'Memo 4'},
+      {content: 'Memo 5'},
+    ];
+    data.forEach(memo => Memos.insert(memo));
+  }
+});
