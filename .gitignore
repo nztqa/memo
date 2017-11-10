@@ -1,0 +1,10 @@
+**/build/*
+**/tmp/*
+*~
+*.sublime-project
+*.sublime-workspace
+*.swp
+.DS_Store
+.idea
+.vscode
+node_modules/
