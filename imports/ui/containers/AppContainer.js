@@ -21,6 +21,6 @@ export default withTracker(() => {
     createMemo,
     removeMemo,
     updateMemoContent,
-    memos: Memos.find().fetch(),
+    memos: Memos.find({}, {sort: {createdAt: -1}}).fetch(),
   };
 })(AppLayout);
