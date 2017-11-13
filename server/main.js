@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Memos } from '../imports/api/memos/memos';
 import '../imports/api/memos/server/publications.js';
+import '../imports/api/memos/methods.js';
 
 Meteor.startup(() => {
   if (Memos.find().count() === 0) {

@@ -4,12 +4,26 @@ import Header from '../components/Header';
 import MemoList from '../components/MemoList';
 
 export default class AppLayout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    const { memos, createMemo } = this.props;
+    createMemo(`New memo ${memos.length + 1}`);
+  }
+
   render() {
-    const { memos } = this.props;
+    const { memos, removeMemo, updateMemoContent } = this.props;
     return (
       <div className="container">
         <Header />
-        <MemoList memos={memos} />
+        <button className="add-button" onClick={this.onClick}>Add</button>
+        <MemoList
+          memos={memos}
+          removeMemo={removeMemo}
+          updateMemoContent={updateMemoContent} />
       </div>
     );
   }
@@ -17,4 +31,7 @@ export default class AppLayout extends React.Component {
 
 AppLayout.propTypes = {
   memos: PropTypes.array.isRequired,
+  createMemo: PropTypes.func.isRequired,
+  removeMemo: PropTypes.func.isRequired,
+  updateMemoContent: PropTypes.func.isRequired,
 };
