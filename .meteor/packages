@@ -27,3 +27,5 @@ aldeed:collection2-core
 mdg:validated-method
 react-meteor-data
 coffeescript@1.12.7_3
+dburles:factory
+xolvio:cleaner
