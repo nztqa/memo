@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import { Factory } from 'meteor/dburles:factory';
 
 // class MemosCollection extends Mongo.Collection {
 //   insert(doc, callback) {
@@ -34,8 +35,18 @@ Memos.deny({
   remove() { return true; },
 });
 
+Memos.allow({
+  insert() { return false; },
+  update() { return false; },
+  remove() { return false; },
+});
+
 // for debug
 if (Meteor.isDevelopment) {
   global.collections = global.collections || {};
   global.collections.Memos = Memos;
 }
+
+Factory.define('memo', Memos, {
+  content: () => 'Factory Content',
+});
