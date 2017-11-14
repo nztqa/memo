@@ -14,8 +14,19 @@ export default class AppLayout extends React.Component {
     createMemo(`New memo ${memos.length + 1}`);
   }
 
+  renderLoading() {
+    return (
+      <div className="container">
+        <div className="loading">Now Loading...</div>
+      </div>
+    );
+  }
+
   render() {
-    const { memos, removeMemo, updateMemoContent } = this.props;
+    const { memos, removeMemo, updateMemoContent, loading } = this.props;
+    if (loading) {
+      return this.renderLoading();
+    }
     return (
       <div className="container">
         <Header />
@@ -34,4 +45,5 @@ AppLayout.propTypes = {
   createMemo: PropTypes.func.isRequired,
   removeMemo: PropTypes.func.isRequired,
   updateMemoContent: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
 };
