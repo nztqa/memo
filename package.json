@@ -15,6 +15,6 @@
     "react-masonry-component": "^6.0.1",
     "react-router-dom": "^4.2.2",
     "react-textarea-autosize": "^5.2.0",
-    "simpl-schema": "^0.4.1"
+    "simpl-schema": "^1.10.2"
   }
 }
